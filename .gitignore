@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+weblens-backend/venv/
+
+# Local secrets
+.env
+weblens-backend/.env
+
+# Test/cache artifacts
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# macOS
+.DS_Store

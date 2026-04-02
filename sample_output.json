@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "error_code": "",
+  "message": "ok",
+  "input_file": "sample_image.jpg",
+  "input_type": "image",
+  "frame_step": 1,
+  "processed_frames": 1,
+  "tags": [
+    "person",
+    "vehicle"
+  ],
+  "detections": [
+    {
+      "label": "person",
+      "raw_label": "person",
+      "confidence": 0.9412,
+      "bbox_xyxy": [
+        120,
+        66,
+        314,
+        472
+      ],
+      "timestamp_sec": 0.0
+    },
+    {
+      "label": "vehicle",
+      "raw_label": "car",
+      "confidence": 0.8897,
+      "bbox_xyxy": [
+        332,
+        190,
+        622,
+        400
+      ],
+      "timestamp_sec": 0.0
+    }
+  ],
+  "total_detections": 2
+}

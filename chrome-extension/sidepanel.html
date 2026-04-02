@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebLens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="panel-head">
+      <h2>WebLens</h2>
+      <button id="themeToggleBtn" type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">
+          <svg id="iconMoon" class="theme-icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M21 14.2A9 9 0 1 1 9.8 3a7 7 0 1 0 11.2 11.2Z" fill="currentColor"></path>
+          </svg>
+          <svg id="iconSun" class="theme-icon-svg hidden" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor"></circle>
+            <path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3M4.4 4.4l2.1 2.1M17.5 17.5l2.1 2.1M19.6 4.4l-2.1 2.1M6.5 17.5l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <label for="modeSelect">Mode:</label>
+    <select id="modeSelect">
+      <option value="summarize">Summarize</option>
+      <option value="explain">Explain</option>
+      <option value="extract">Extract</option>
+      <option value="translate">Translate</option>
+      <option value="quiz">Quiz</option>
+      <option value="action_items">Action Items</option>
+      <option value="fact_check">Fact Check</option>
+    </select>
+
+    <label for="taskInput" id="taskLabel">Task (used for Fact Check):</label>
+    <input id="taskInput" placeholder="Enter custom task..." />
+
+    <label for="languageSelect" id="languageLabel">Translate Target:</label>
+    <select id="languageSelect">
+      <option value="Hindi">Hindi</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Portuguese">Portuguese</option>
+      <option value="Japanese">Japanese</option>
+    </select>
+
+    <label for="detailSelect" id="detailLabel">Output Detail:</label>
+    <select id="detailSelect">
+      <option value="short">Short</option>
+      <option value="detailed">Detailed</option>
+    </select>
+
+    <div class="actions">
+      <button id="analyzeBtn">Run</button>
+      <button id="copyBtn" type="button">Copy</button>
+      <button id="downloadBtn" type="button">Download</button>
+    </div>
+
+    <p id="status" class="status"></p>
+    <div id="stageRail" class="stage-rail" aria-live="polite">
+      <span class="stage-chip" data-stage-chip="extract">1. Extract</span>
+      <span class="stage-chip" data-stage-chip="analyze">2. Analyze</span>
+      <span class="stage-chip" data-stage-chip="format">3. Format</span>
+    </div>
+
+    <div class="report-toolbar">
+      <div class="view-switch">
+        <button id="smartViewBtn" type="button" class="view-btn active">Smart View</button>
+        <button id="rawViewBtn" type="button" class="view-btn">Raw View</button>
+      </div>
+      <span id="reportModePill" class="mode-pill">Smart</span>
+    </div>
+
+    <section id="output" class="report" aria-live="polite">
+      <p class="report-placeholder">Run an analysis to see an interactive report.</p>
+    </section>
+    <pre id="rawOutput" class="raw-report hidden"></pre>
+
+    <div class="history-header">
+      <h3>Recent History</h3>
+      <button id="clearHistoryBtn" type="button">Clear</button>
+    </div>
+    <ul id="historyList"></ul>
+  </main>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
